@@ -3,9 +3,9 @@ fun main() {
     var post2 = Post(id = 2, text = "Текст 2")
     val post3 = Post(id = 1, text = "Текст 3")
 
-    val att = AttachmentAudio(value = Audio(id=1, trackName = "Песня 1"))
+    var att:Attachment = AttachmentAudio(value = Audio(id=1, trackName = "Песня 1"))
 
-    post2.addAttachment(post2, att)
+    post2.addAttachment(att)
 
     val ws = WallService()
 
