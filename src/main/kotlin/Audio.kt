@@ -5,4 +5,7 @@ class Audio (
     val user_id:Int = 0,
     val trackName:String
 ) {
+    override fun toString():String{
+        return "(id $id, $trackName)"
+    }
 }

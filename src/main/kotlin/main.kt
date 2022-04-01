@@ -3,9 +3,20 @@ fun main() {
     var post2 = Post(id = 2, text = "Текст 2")
     val post3 = Post(id = 1, text = "Текст 3")
 
-    var att:Attachment = AttachmentAudio(value = Audio(id=1, trackName = "Песня 1"))
-
+    var att:Attachment = AttachmentAudio(Audio(id=1, trackName = "Песня 1"))
     post2.addAttachment(att)
+
+    att = AttachmentVideo(Video(id=1, title = "Видео 1"))
+    post2.addAttachment(att)
+
+    att = AttachmentVideo(Video(id=2, title = "Видео 2"))
+    post2.addAttachment(att)
+
+    post3.addAttachment(att)
+
+    post3.addAttachment(AttachmentPhoto(Photo(id=2, title = "Фото 2")))
+    post3.addAttachment(AttachmentNote(Note(id=2, text = "Заметка 2")))
+    post2.addAttachment(AttachmentNote(Note(id=2, text = "Заметка 222")))
 
     val ws = WallService()
 
