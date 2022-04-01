@@ -64,7 +64,12 @@ duration — время, в течение которого запись буд�
     val postponedId:Int = 0,//integer	Идентификатор отложенной записи. Это поле возвращается тогда, когда з
 ) {
     init {
-        this.attachments = emptyArray()
+        attachments = emptyArray()
+        var ind:Int = 0
+        ind = 0
+        attachments.set(ind, AttachmentAudio(value = Audio(id = ind, trackName = "init $ind")))
+        ind = 1
+        attachments.set(ind, AttachmentAudio(value = Audio(id = ind, trackName = "init $ind")))
     }
 
     fun addAttachment(att:Attachment){
