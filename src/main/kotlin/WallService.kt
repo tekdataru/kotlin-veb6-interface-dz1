@@ -30,6 +30,9 @@ class WallService {
 
         for (post in posts){
             println("" + post.id + " - " + post.text)
+            for (att in post.attachments){
+                println("Вложение: " + att.type + " - " + att.value)
+            }
         }
 
     }

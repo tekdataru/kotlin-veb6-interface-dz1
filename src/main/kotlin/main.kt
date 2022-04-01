@@ -1,7 +1,11 @@
 fun main() {
     val post = Post(id = 1, text = "Текст 1")
-    val post2 = Post(id = 2, text = "Текст 2")
+    var post2 = Post(id = 2, text = "Текст 2")
     val post3 = Post(id = 1, text = "Текст 3")
+
+    val att = AttachmentAudio(value = Audio(id=1, trackName = "Песня 1"))
+
+    post2.addAttachment(post2, att)
 
     val ws = WallService()
 

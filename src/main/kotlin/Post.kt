@@ -38,8 +38,8 @@ count (integer) — число просмотров записи.*/
     /*val postSource:Boolean
 object
 Поле возвращается только для Standalone-приложений с ключом доступа, полученным в Implicit Flow.	Информация о способе размещения записи. Описание объекта находится на отдельной странице.*/
-    /*val attachments:Boolean
-array	Медиавложения записи (фотографии, ссылки и т.п.). Описание массива attachments находится на отдельной странице.*/
+    val attachments:Array<Attachment>
+    /*Медиавложения записи (фотографии, ссылки и т.п.). Описание массива attachments находится на отдельной странице.*/
     /*val geo:Boolean
 object	Информация о местоположении , содержит поля:
 type (string) — тип места;
@@ -62,4 +62,12 @@ edit_mode (string) — информация о том, какие значени
 all — всю информацию о VK Donut.
 duration — время, в течение которого запись будет доступна только платным подписчикам VK Donut.*/
     val postponedId:Int = 0,//integer	Идентификатор отложенной записи. Это поле возвращается тогда, когда з
-)
+) {
+    init {
+        this.attachments = emptyArray()
+    }
+
+    fun addAttachment(att:Attachment){
+        attachments.set(attachments.size, att)
+    }
+}
